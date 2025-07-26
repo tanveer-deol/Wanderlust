@@ -1,0 +1,82 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+  <br /><br />
+
+  <div class="row">
+    <div class="col-8 offset-2">
+      <h3>Edit Listing</h3>
+      <form method="POST" action="/Listings/<%=listing._id%>?_method=PUT" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="title" class="form-label" >Title</label>
+          <input
+            type="text"
+            placeholder="Title"
+            name="title"
+            class="form-control"
+            value="<%=listing.title%>"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <textarea
+            name="description"
+            id=""
+            placeholder="Description"
+            class="form-control"
+          ><%=listing.description%></textarea>
+        </div>
+        <div class="mb-3">
+          Original Image <br>
+          <img src="<%= originalUrl%>" alt="Old Image" srcset="">
+        </div>
+        <div class="mb-3">
+          <label for="image" class="form-label">Upload New Image</label>
+          <input
+            type="file"
+            name="image"
+            placeholder="Image"
+            class="form-control"
+          />
+        </div>
+        <div class="row">
+          <div class="mb-3 col-md-4">
+            <label for="price" class="form-label" >Price</label>
+            <input
+              type="number"
+              placeholder="1299"
+              name="price"
+              class="form-control"
+              value="<%=listing.price%>"
+            />
+          </div>
+
+          <div class="mb-3 col-md-8">
+            <label for="country" class="form-label" >Country</label>
+            <input
+              type="text"
+              name="country"
+              id=""
+              placeholder="India"
+              class="form-control"
+              value="<%=listing.country%>"
+            />
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="location" class="form-label" >Location</label>
+          <input
+            type="text"
+            name="location"
+            id=""
+            placeholder="Jaipur,Rajasthan"
+            class="form-control"
+            value="<%=listing.location%>"
+          />
+        </div>
+        <br /><br />
+        <button class="btn btn-dark edit-btn">Edit</button>
+        <br /><br />
+      </form>
+    </div>
+  </div>
+</body>

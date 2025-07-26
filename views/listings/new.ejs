@@ -1,0 +1,83 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+  <br /><br />
+
+  <div class="row">
+    <div class="col-8 offset-2">
+      <h3>Create a New Listing</h3>
+      <form method="POST" action="/Listings" class="needs-validation" novalidate enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input
+            type="text"
+            placeholder="Title"
+            name="title"
+            class="form-control" 
+            required
+          />
+          <div class="valid-feedback">Title Looks Good</div>
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <textarea
+            name="description"
+            id=""
+            placeholder="Description"
+            class="form-control"
+            required
+          ></textarea>
+          <div class="valid-feedback">Looks Good</div>
+        </div>
+        <div class="mb-3">
+          <label for="image" class="form-label">Upload Image</label>
+          <input
+            type="file"
+            name="image"
+            class="form-control"
+            required
+          />
+        </div>
+        <div class="row">
+          <div class="mb-3 col-md-4">
+            <label for="price" class="form-label">Price</label>
+            <input
+              type="number"
+              placeholder="1299"
+              name="price"
+              class="form-control"
+              required
+              
+            />
+            <div class="valid-feedback">Looks Good</div>
+          </div>
+
+          <div class="mb-3 col-md-8">
+            <label for="country" class="form-label">Country</label>
+            <input
+              type="text"
+              name="country"
+              id=""
+              placeholder="India"
+              class="form-control"
+              required
+            />
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="location" class="form-label">Location</label>
+          <input
+            type="text"
+            name="location"
+            id=""
+            placeholder="Jaipur,Rajasthan"
+            class="form-control"
+            required
+          />
+        </div>
+        <br /><br />
+        <button class="btn btn-dark add-btn">submit</button>
+        <br /><br />
+      </form>
+    </div>
+  </div>
+</body>
